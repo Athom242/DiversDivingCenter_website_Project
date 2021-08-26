@@ -1,0 +1,26 @@
+%link {
+    //decoration
+    text-decoration: none;
+    color: black;
+    //display
+    display: inline-block;
+}
+
+%item_li {
+    list-style-type: none;
+}
+
+%title_section {
+    padding: 1em 5em;
+    text-align: center;
+    font-size: 44px;
+}
+
+%section_bases_style {
+    width: $larger_of_screen_container;
+}
+
+** //Effet Animation Transition
+%animationDeplacementStart {
+    visibility: hidden;
+}

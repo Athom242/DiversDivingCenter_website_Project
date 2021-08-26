@@ -1,0 +1,172 @@
+/**
+fichier de mise en page de la section de rendu d'image
+**/
+
+.containt {
+    overflow: hidden !important;
+}
+
+.buttonSwipe {
+    // width: 70px;
+    // height: 50px;
+    position: absolute;
+    top: $position_button;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1em 0.1em;
+    transform: translateY(-#{$position_button});
+    cursor: pointer;
+    transition: background-color 0.5s ease-in;
+    &::after {
+        content: "";
+        width: 40%;
+        height: 2px;
+        background-color: white;
+        position: absolute;
+        bottom: 1em;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: transform 0.2s ease-in;
+    }
+    &::before {
+        font-weight: bold;
+        padding: 2em 1em;
+    }
+    // &:hover {
+    //     // color: rgba(0, 0, 0, 0.8);
+    //     // background-color: rgba(255, 255, 255, 0.8);
+    // }
+    &:hover::after {
+        // background-color: rgba(0, 0, 0, 0.8);
+        transform: translateX(-50%) scaleX(0.6);
+    }
+}
+
+.buttonLeft {
+    left: 0px;
+    border-bottom-right-radius: $border_radius_size;
+    border-top-right-radius: $border_radius_size;
+    &::before {
+        content: "prev";
+    }
+}
+
+.buttonRight {
+    border-bottom-left-radius: $border_radius_size;
+    border-top-left-radius: $border_radius_size;
+    right: 0px;
+    &::before {
+        content: "next";
+    }
+}
+
+.infoContainer {
+    //DIMENSION
+    width: $larger_of_screen_container;
+    height: $height_of_screen_container;
+    //POSITIONNEMENT
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    //TRANSFORMATION
+    transform: translateX(-50%);
+    //AFFICHAGE
+    display: flex;
+    //DEBOG
+    // border: 1px solid black;
+    overflow: hidden;
+}
+
+.activeBoxInfo {
+    display: block !important;
+    animation: depla 5s 0s;
+}
+
+.boxInfo {
+    display: none;
+    width: $larger_of_vp_infoContainer;
+    height: 80%;
+    // border: 1px solid black;
+    margin: 2em;
+    position: relative;
+    // overflow: hidden;
+    h1 {
+        text-align: left;
+        font-size: 4rem;
+        color: white;
+        //Animation Parametre
+        // display: inline-block;
+        position: relative;
+        // left: -500px;
+        // animation: animateDep 1s ease-in;
+        // animation-delay: .5s;
+        // animation-direction: ;
+        // animation-iteration-count: ;
+    }
+    p {
+        margin: 1em 2px;
+        font-size: x-large;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.2em;
+        position: relative;
+        // animation: animateDep 1.5s ease-in;
+        // animation-delay: 0;
+    }
+    button {
+        $coef_butt_size: 1.25em;
+        font-size: 15px;
+        font-weight: bolder !important;
+        border: none;
+        padding: $coef_butt_size*1 $coef_butt_size*1.5;
+        border-radius: 0.5em;
+        font-weight: bolder;
+        background-color: yellow;
+        position: relative;
+        bottom: -1em;
+        left: 0.2em;
+        cursor: pointer;
+        // animation-name: animateDep;
+        // animation-duration: 2s;
+        // animation-delay: 1s;
+        // animation: animateDep 1.75s;
+        // display: inline;
+    }
+}
+
+@keyframes animateDep {
+    0% {
+        left: -500px;
+        display: none;
+        color: transparent;
+        background: none;
+        border: none;
+    }
+    75% {
+        display: none;
+        color: transparent;
+        background: none;
+        border: none;
+    }
+    100% {
+        left: 0px;
+        display: initial;
+    }
+}
+
+@keyframes depla {
+    0% {
+        right: -1500px;
+        display: none;
+        color: transparent;
+        border: none;
+    }
+    85% {
+        display: none;
+        color: transparent;
+        border: none // border: 5px solid black;
+    }
+    100% {
+        right: 0px;
+        display: initial;
+    }
+}

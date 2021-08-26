@@ -1,0 +1,32 @@
+//reset CSS
+*,
+*::after,
+*::before {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Lato", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+    // border: 1px solid black;
+}
+
+//Importation des differents Modules
+@import 'modul_style/_variables_config.scss';
+@import 'modul_style/_bases_style.scss';
+//__Configuration du Style de la page
+// .container {
+//     // border: 1px solid black;
+//     // position: absolute;
+//     // top: 0;
+//     // bottom: 0;
+//     // left: 0;
+//     // right: 0;
+//     // z-index: -1;
+// }
+// body {
+//     background-color: transparent;
+// }
+@import 'modul_style/AnimationStyle.scss';
+@import 'modul_style/_header.scss';
+@import 'modul_style/container_style.scss';
+@import 'modul_style/_section_destination.scss';
+@import 'modul_style/_presentation.scss'
